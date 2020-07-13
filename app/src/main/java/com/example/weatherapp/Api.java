@@ -1,0 +1,19 @@
+package com.example.weatherapp;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+
+public interface Api {
+    String BASE_URL = "https://www.metaweather.com/api/location/";
+
+    @GET("3534")
+    Call<Location> getMontrel();
+
+    @GET("2459115")
+    Call<Location> getNewYork();
+
+    @GET("4118")
+    Call<Location> getToronto();
+}
