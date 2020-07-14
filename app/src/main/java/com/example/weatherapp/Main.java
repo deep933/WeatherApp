@@ -86,6 +86,36 @@ public class Main extends AppCompatActivity{
                 return true;
             }
         });
+
+        MenuItem vancouver = navigationView.getMenu().findItem(R.id.loc_vancouver);
+        vancouver.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                drawer.closeDrawer(GravityCompat.START);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("city","Vancouver");
+                navController.navigate(R.id.nav_home, bundle);
+                getSupportActionBar().setTitle("Vancouver");
+
+                return true;
+            }
+        });
+
+        MenuItem mumbai = navigationView.getMenu().findItem(R.id.loc_mumbai);
+        mumbai.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                drawer.closeDrawer(GravityCompat.START);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("city","Mumbai");
+                navController.navigate(R.id.nav_home, bundle);
+                getSupportActionBar().setTitle("Mumbai");
+
+                return true;
+            }
+        });
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

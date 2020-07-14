@@ -80,6 +80,14 @@ public class HomeFragment extends Fragment {
                     call = api.getToronto();
 
                 }
+                else if (getArguments().getString("city").equals("Vancouver")) {
+                    call = api.getVancouver();
+
+                }
+                else if (getArguments().getString("city").equals("Mumbai")) {
+                    call = api.getMumbai();
+
+                }
             }
 
             call.enqueue(new Callback<Location>() {
@@ -100,8 +108,8 @@ public class HomeFragment extends Fragment {
                     weather.setText(location.getConsolidated_weather().get(0).getWeather_state_name());
                     min_temp.setText(String.format("%.2f", location.getConsolidated_weather().get(0).getMin_temp()));
 
-                    max_temp.setText(String.format("%.2f", location.getConsolidated_weather().get(0).getMax_temp()));
-                    wind_speed.setText(String.format("%.2f", location.getConsolidated_weather().get(0).getWind_speed()));
+                    max_temp.setText(String.format("%.2f", location.getConsolidated_weather().get(0).getThe_temp()));
+                    wind_speed.setText(String.format("%.2f", location.getConsolidated_weather().get(0).getMax_temp()));
 
                     prediction.setText(String.valueOf(location.getConsolidated_weather().get(0).getPredictability()) + "%");
                     humidity.setText(String.valueOf(location.getConsolidated_weather().get(0).getHumidity()));

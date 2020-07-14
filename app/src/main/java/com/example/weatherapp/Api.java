@@ -16,4 +16,10 @@ public interface Api {
 
     @GET("4118")
     Call<Location> getToronto();
+
+    @GET("9807")
+    Call<Location> getVancouver();
+
+    @GET("12586539")
+    Call<Location>  getMumbai();
 }

@@ -52,8 +52,8 @@ public class DayWeather extends AppCompatActivity {
         weather.setText(we.getWeather_state_name());
         min_temp.setText(String.format("%.2f", we.getMin_temp()));
 
-        max_temp.setText(String.format("%.2f", we.getMax_temp()));
-        wind_speed.setText(String.format("%.2f", we.getWind_speed()));
+        max_temp.setText(String.format("%.2f", we.getThe_temp()));
+        wind_speed.setText(String.format("%.2f", we.getMax_temp()));
 
         prediction.setText(String.valueOf(we.getPredictability()) + "%");
         humidity.setText(String.valueOf(we.getHumidity()));
